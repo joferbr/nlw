@@ -46,7 +46,7 @@
       </aside>
 
       <main class="animate-appear with-sidebar">
-        <form action="">
+        <form action="save-orphanage" method="post" onsubmit="validate(event)">
           <fieldset>
             <legend>Dados</legend>
 
@@ -82,10 +82,13 @@
             <div class="input-block images">
               <label for="images">Foto</label>
 
-              <div class="images-upload" id="images">
-                
+              <div class="images-upload" id="images">        
                 <div class="new-upload">
-                  <input name="images" placeholder="Cole o link da foto aqui" required/>
+                  <input 
+                    name="images"
+                    placeholder="Cole o link da foto aqui"
+                    required
+                    type="url"/> //ver video para pt canal rockcite codedrops
                   <span onclick="deleteField(event)">
                     <img src="/images/remove-file.svg" alt="Remover foto">
                   </span>
@@ -119,7 +122,7 @@
                 type="hidden"
                 id="open_on_weekends"
                 name="open_on_weekends"
-                value="1"
+                value="0"
                 required
               />
 
@@ -130,8 +133,8 @@
                  class="active">Sim</button>
                 <button data-value="0"
                  onclick="toggleSelect(event)"
-                 type="button">
-                 Não</button>
+                 type="button"
+                 class="active">Não</button>
               </div>
 
               <button type="submit" class="primary-button">
